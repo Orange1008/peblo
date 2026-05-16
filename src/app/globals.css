@@ -2,26 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-md border border-white/50 shadow-lg dark:bg-black/40 dark:border-white/10;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-peblo-purple via-peblo-pink to-peblo-blue;
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@layer base {
+  .theme {
+    --font-heading: var(--font-quicksand);
+    --font-sans: var(--font-nunito);
+  }
+  :root {
+    --background: oklch(0.98 0.01 260); /* Very light, slightly blue background */
+    --foreground: oklch(0.2 0.05 260);
+    --card: oklch(1 0 0 / 0.8);
+    --card-foreground: oklch(0.2 0.05 260);
+    --popover: oklch(1 0 0 / 0.9);
+    --popover-foreground: oklch(0.2 0.05 260);
+    
+    /* Dreamy primary (Purple) */
+    --primary: oklch(0.65 0.15 285);
+    --primary-foreground: oklch(0.98 0 0);
+    
+    /* Secondary (Pink) */
+    --secondary: oklch(0.75 0.15 15);
+    --secondary-foreground: oklch(0.2 0 0);
+    
+    --muted: oklch(0.95 0.02 260);
+    --muted-foreground: oklch(0.5 0.05 260);
+    
+    --accent: oklch(0.85 0.1 260);
+    --accent-foreground: oklch(0.2 0 0);
+    
+    --destructive: oklch(0.6 0.2 20);
+    --destructive-foreground: oklch(0.98 0 0);
+    
+    --border: oklch(0.9 0.02 260);
+    --input: oklch(0.9 0.02 260);
+    --ring: oklch(0.65 0.15 285);
+    
+    --radius: 1rem;
+  }
+  .dark {
+    /* Deep space background */
+    --background: oklch(0.15 0.05 280);
+    --foreground: oklch(0.95 0.02 260);
+    
+    --card: oklch(0.2 0.05 280 / 0.8);
+    --card-foreground: oklch(0.95 0.02 260);
+    
+    --popover: oklch(0.2 0.05 280 / 0.9);
+    --popover-foreground: oklch(0.95 0.02 260);
+    
+    /* Neon pastel primary */
+    --primary: oklch(0.75 0.15 285);
+    --primary-foreground: oklch(0.1 0 0);
+    
+    /* Neon pastel secondary */
+    --secondary: oklch(0.8 0.15 15);
+    --secondary-foreground: oklch(0.1 0 0);
+    
+    --muted: oklch(0.25 0.05 280);
+    --muted-foreground: oklch(0.7 0.05 280);
+    
+    --accent: oklch(0.3 0.1 280);
+    --accent-foreground: oklch(0.95 0 0);
+    
+    --destructive: oklch(0.6 0.2 20);
+    --destructive-foreground: oklch(0.98 0 0);
+    
+    --border: oklch(0.3 0.05 280);
+    --input: oklch(0.3 0.05 280);
+    --ring: oklch(0.75 0.15 285);
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
