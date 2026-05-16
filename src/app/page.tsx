@@ -84,7 +84,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.7 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="relative hidden md:flex justify-center items-center h-[500px]"
+              className="relative flex justify-center items-center h-[400px] md:h-[500px] mt-8 md:mt-0"
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-peblo-blue/30 to-peblo-pink/30 rounded-full filter blur-[80px] animate-pulse" />
               <motion.div {...bounce} className="relative z-10 w-full h-full max-w-md">

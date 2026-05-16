@@ -31,73 +31,63 @@
     --font-sans: var(--font-nunito);
   }
   :root {
-    --background: oklch(0.98 0.01 260); /* Very light, slightly blue background */
-    --foreground: oklch(0.2 0.05 260);
-    --card: oklch(1 0 0 / 0.8);
-    --card-foreground: oklch(0.2 0.05 260);
-    --popover: oklch(1 0 0 / 0.9);
-    --popover-foreground: oklch(0.2 0.05 260);
-    
+    --background: #f5f3ff;
+    --foreground: #1a1333;
+    --card: rgba(255,255,255,0.85);
+    --card-foreground: #1a1333;
+    --popover: rgba(255,255,255,0.95);
+    --popover-foreground: #1a1333;
+
     /* Dreamy primary (Purple) */
-    --primary: oklch(0.65 0.15 285);
-    --primary-foreground: oklch(0.98 0 0);
-    
+    --primary: #7c3aed;
+    --primary-foreground: #ffffff;
+
     /* Secondary (Pink) */
-    --secondary: oklch(0.75 0.15 15);
-    --secondary-foreground: oklch(0.2 0 0);
-    
-    --muted: oklch(0.95 0.02 260);
-    --muted-foreground: oklch(0.5 0.05 260);
-    
-    --accent: oklch(0.85 0.1 260);
-    --accent-foreground: oklch(0.2 0 0);
-    
-    --destructive: oklch(0.6 0.2 20);
-    --destructive-foreground: oklch(0.98 0 0);
-    
-    --border: oklch(0.9 0.02 260);
-    --input: oklch(0.9 0.02 260);
-    --ring: oklch(0.65 0.15 285);
-    
+    --secondary: #ec4899;
+    --secondary-foreground: #1a1333;
+
+    --muted: #ede9fe;
+    --muted-foreground: #6b7280;
+
+    --accent: #c4b5fd;
+    --accent-foreground: #1a1333;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    --border: #ddd6fe;
+    --input: #ddd6fe;
+    --ring: #7c3aed;
+
     --radius: 1rem;
   }
   .dark {
-    /* Deep space background */
-    --background: oklch(0.15 0.05 280);
-    --foreground: oklch(0.95 0.02 260);
-    
-    --card: oklch(0.2 0.05 280 / 0.8);
-    --card-foreground: oklch(0.95 0.02 260);
-    
-    --popover: oklch(0.2 0.05 280 / 0.9);
-    --popover-foreground: oklch(0.95 0.02 260);
-    
-    /* Neon pastel primary */
-    --primary: oklch(0.75 0.15 285);
-    --primary-foreground: oklch(0.1 0 0);
-    
-    /* Neon pastel secondary */
-    --secondary: oklch(0.8 0.15 15);
-    --secondary-foreground: oklch(0.1 0 0);
-    
-    --muted: oklch(0.25 0.05 280);
-    --muted-foreground: oklch(0.7 0.05 280);
-    
-    --accent: oklch(0.3 0.1 280);
-    --accent-foreground: oklch(0.95 0 0);
-    
-    --destructive: oklch(0.6 0.2 20);
-    --destructive-foreground: oklch(0.98 0 0);
-    
-    --border: oklch(0.3 0.05 280);
-    --input: oklch(0.3 0.05 280);
-    --ring: oklch(0.75 0.15 285);
+    --background: #0f0a1e;
+    --foreground: #f3f0ff;
+    --card: rgba(30,20,60,0.85);
+    --card-foreground: #f3f0ff;
+    --popover: rgba(30,20,60,0.95);
+    --popover-foreground: #f3f0ff;
+    --primary: #a78bfa;
+    --primary-foreground: #0f0a1e;
+    --secondary: #f472b6;
+    --secondary-foreground: #0f0a1e;
+    --muted: #1e1240;
+    --muted-foreground: #a78bfa;
+    --accent: #2d1b69;
+    --accent-foreground: #f3f0ff;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #2d1b69;
+    --input: #2d1b69;
+    --ring: #a78bfa;
   }
   * {
-    @apply border-border;
+    border-color: var(--border);
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
