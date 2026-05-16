@@ -96,8 +96,8 @@ export default function NotesPage() {
     contentTimer.current = setTimeout(() => updateNote(activeNote.id, { [field]: value }), 600);
   }, [activeNote, updateNote]);
 
-  const handleNewNote = () => {
-    const n = createNote();
+  const handleNewNote = async () => {
+    const n = await createNote();
     setActiveId(n.id);
     toast({ title: "Note Created! 🎉", description: "Your new adventure page is ready!" });
     setTimeout(() => titleRef.current?.focus(), 100);
