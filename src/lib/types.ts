@@ -1,4 +1,16 @@
+export type User = {
+  _id?: string;
+  id?: string;
+  name: string;
+  email: string;
+  avatar?: string;
+  grade?: string;
+  streak?: number;
+  createdAt?: string;
+};
+
 export type Note = {
+  _id?: string;
   id: string;
   title: string;
   content: string;
